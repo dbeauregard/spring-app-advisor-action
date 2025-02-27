@@ -45,7 +45,7 @@ class SpringEnterpriseRepositoryPlugin implements Plugin<Gradle> {
             project.repositories {
                 // add the Spring enterprise repository
                 maven {
-                    name "SPRING_ENTERPRISE_REPO"
+                    name \"SPRING_ENTERPRISE_REPO\"
                     url \"https://packages.broadcom.com/artifactory/spring-enterprise\"
 
                     credentials {
