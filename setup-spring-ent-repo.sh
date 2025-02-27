@@ -34,6 +34,8 @@ echo "<settings xmlns=\"http://maven.apache.org/SETTINGS/1.0.0\" xmlns:xsi=\"htt
   </activeProfiles>
 </settings>" > $HOME/.m2/settings.xml
 
+mkdir -p $HOME/.gradle/init.d/
+
 echo "apply plugin: SpringEnterpriseRepositoryPlugin
 
 class SpringEnterpriseRepositoryPlugin implements Plugin<Gradle> {
