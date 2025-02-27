@@ -17,6 +17,10 @@ inputs:
   email:
     description: 'Email Address for Spring Enterprise Repo'
     required: true
+  build_tool:
+    description: 'Selects the build tool used to compile the sources, options: mvnw, mvn, gradlew, gradle (default: mvnw)'
+    required: false
+    default: mvnw
 runs:
   using: 'composite'
   steps:
@@ -33,3 +37,4 @@ runs:
         ARTIFACTORY_TOKEN: ${{ inputs.artifactory_token }}
         APP_ADVISOR_SERVER: ${{ inputs.app_advisor_server }}
         GIT_TOKEN_FOR_PRS: ${{ inputs.git_token }}
+        BUILD_TOOL: ${{ inputs.build_tool }}
