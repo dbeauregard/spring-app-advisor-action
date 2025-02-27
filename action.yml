@@ -14,9 +14,18 @@ inputs:
   git_token:
     description: 'Authentication token for generating pull requests against repo'
     required: true
+  email:
+    description: 'Email Address for Spring Enterprise Repo'
+    required: true
 runs:
   using: 'composite'
   steps:
+    - name: Setup Spring Repo
+      run: ${{ github.action_path }}/setup-spring-ent-repo.sh
+      shell: bash
+      env:
+        ARTIFACTORY_TOKEN: ${{ inputs.artifactory_token }}
+        EMAIL: ${{ inputs.email }}
     - name: Run App Advisor
       run: ${{ github.action_path }}/app-advisor.sh
       shell: bash
