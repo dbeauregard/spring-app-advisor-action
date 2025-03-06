@@ -21,6 +21,11 @@ inputs:
     description: 'Selects the build tool used to compile the sources, options: mvnw, mvn, gradlew, gradle (default: mvnw)'
     required: false
     default: mvnw
+  saa_version:
+    description: 'Spring App Advisor CLI Version'
+    required: true
+    default: 1.1.3
+
 runs:
   using: 'composite'
   steps:
@@ -38,3 +43,4 @@ runs:
         APP_ADVISOR_SERVER: ${{ inputs.app_advisor_server }}
         GIT_TOKEN_FOR_PRS: ${{ inputs.git_token }}
         BUILD_TOOL: ${{ inputs.build_tool }}
+        VERSION: ${{ inputs.saa_version }}
