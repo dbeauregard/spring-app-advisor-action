@@ -8,9 +8,6 @@ inputs:
   artifactory_token:
     description: 'Token for Spring Enterprise Subscription'
     required: true
-  app_advisor_server:
-    description: 'URL endpoint for Spring Application Advisor'
-    required: true
   git_token:
     description: 'Authentication token for generating pull requests against repo'
     required: true
@@ -24,7 +21,7 @@ inputs:
   saa_version:
     description: 'Spring App Advisor CLI Version'
     required: false
-    default: 1.1.3
+    default: 1.2.0
 
 runs:
   using: 'composite'
@@ -40,7 +37,6 @@ runs:
       shell: bash
       env:
         ARTIFACTORY_TOKEN: ${{ inputs.artifactory_token }}
-        APP_ADVISOR_SERVER: ${{ inputs.app_advisor_server }}
         GIT_TOKEN_FOR_PRS: ${{ inputs.git_token }}
         BUILD_TOOL: ${{ inputs.build_tool }}
         VERSION: ${{ inputs.saa_version }}

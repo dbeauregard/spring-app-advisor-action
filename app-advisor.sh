@@ -4,6 +4,5 @@ tar -xf /tmp/advisor-cli.tar --strip-components=1 -C /tmp
 install /tmp/advisor /usr/local/bin/advisor
 
 advisor build-config get -b $BUILD_TOOL
-advisor build-config publish --url=${APP_ADVISOR_SERVER}
-advisor upgrade-plan get --url=${APP_ADVISOR_SERVER}
-advisor upgrade-plan apply --push --url=${APP_ADVISOR_SERVER} -b $BUILD_TOOL
+advisor upgrade-plan get 
+advisor upgrade-plan apply --push -b $BUILD_TOOL
