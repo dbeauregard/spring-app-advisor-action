@@ -4,5 +4,5 @@ tar -xf /tmp/advisor-cli.tar --strip-components=1 -C /tmp
 install /tmp/advisor /usr/local/bin/advisor
 
 advisor build-config get -b $BUILD_TOOL
-advisor upgrade-plan get 
+advisor upgrade-plan get -b $BUILD_TOOL
 advisor upgrade-plan apply --push -b $BUILD_TOOL
